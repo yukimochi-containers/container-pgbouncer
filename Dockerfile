@@ -2,8 +2,8 @@ FROM alpine:latest AS builder
 
 ARG PGBOUNCER_VERSION=1.8.1
 RUN apk add -U --no-cache build-base libevent-dev c-ares-dev libressl-dev
-RUN wget https://pgbouncer.github.io/downloads/files/$PGBOUNCER_VERSION/pgbouncer-$PGBOUNCER_VERSION.tar.gz && \
-    wget https://pgbouncer.github.io/downloads/files/$PGBOUNCER_VERSION/pgbouncer-$PGBOUNCER_VERSION.tar.gz.sha256 -O - | sha256sum -c - && \
+RUN wget http://pgbouncer.github.io/downloads/files/$PGBOUNCER_VERSION/pgbouncer-$PGBOUNCER_VERSION.tar.gz && \
+    wget http://pgbouncer.github.io/downloads/files/$PGBOUNCER_VERSION/pgbouncer-$PGBOUNCER_VERSION.tar.gz.sha256 -O - | sha256sum -c - && \
     tar -xf pgbouncer-$PGBOUNCER_VERSION.tar.gz && \
     rm pgbouncer-$PGBOUNCER_VERSION.tar.gz
 WORKDIR pgbouncer-$PGBOUNCER_VERSION

@@ -1,0 +1,19 @@
+image: yukimochi/container-pgbouncer:latest
+manifests:
+  -
+    image: yukimochi/container-pgbouncer:v1.8-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: yukimochi/container-pgbouncer:v1.8-aarch64
+    platform:
+      architecture: arm64
+      variant: v8
+      os: linux
+  -
+    image: yukimochi/container-pgbouncer:v1.8-armv7
+    platform:
+      architecture: arm
+      variant: v7
+      os: linux
