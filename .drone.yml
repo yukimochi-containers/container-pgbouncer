@@ -1,8 +1,0 @@
-platform: linux/arm64
-
-pipeline:
-  docker:
-    image: plugins/docker:linux-arm64
-    repo: yukimochi/container-pgbouncer
-    secrets: [ docker_username, docker_password ]
-    tags: v1.8-aarch64
